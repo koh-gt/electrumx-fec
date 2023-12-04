@@ -67,10 +67,18 @@ Change `COIN` to `COIN = Ferrite` to host a Ferrite ElectrumX server.
 # REQUIRED
 DB_DIRECTORY = /home/ubuntu/electrumx/db
 # Bitcoin Node RPC Credentials
-DAEMON_URL = user:password@localhost:9573 
+DAEMON_URL = user:password@localhost
 
-SERVICES = tcp://0.0.0.0:50001,rpc://
-COIN = Ferrite 
+SERVICES = tcp://0.0.0.0:50001,ssl://0.0.0.0:50002
+COIN = Ferrite
+PEER_DISCOVERY = off
+
+COST_SOFT_LIMIT=0
+COST_HARD_LIMIT=0
+CACHE_MB=2000
+SSL_CERTFILE = /home/ubuntu/electrumx/server.crt
+SSL_KEYFILE = /home/ubuntu/electrumx/server.key
+# ensure you generate the server crt and key file and move them to the root folder
 
 # See https://electrumx-spesmilo.readthedocs.io/en/latest/environment.html for
 # information about other configuration settings you probably want to consider.
